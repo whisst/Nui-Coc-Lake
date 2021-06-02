@@ -1,0 +1,8 @@
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('https://img.wallpapersafari.com/desktop/1920/1080/23/69/Ob7tUB.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}

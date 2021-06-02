@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
+
+:root {
+  --padding: 16px 32px;
+  --transition-duration: 0.3s;
+  --products-width: 300px;
+  --products-height: 280px;
+  --developers-width: 400px;
+  --developers-height: 280px;
+  --company-width: 400px;
+  --company-height: 280px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+/* Root element */
+.header {
+  perspective: 2000px;
+}
+
+footer {
+  margin-top: 20px;
+}
+
+/* Top nav ----------------------------- */
+
+.nav {
+  display: flex;
+}
+.nav-link {
+  height: 50px;
+  padding: 0 50px;
+  line-height: 50px;
+  border: 0;
+  font-size: 16px;
+  color: black;
+  background:  none;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  transition: opacity 0.2s;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  opacity: 0.5;
+}
+
+
+/* Popover ----------------------------- */
+
+.popover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform-origin: center -20px;
+  transform: rotateX(-15deg);
+  transition:
+    transform var(--transition-duration),
+    opacity var(--transition-duration);
+  background: red;
+  display: inline-block;
+}
+
+.popover.open {
+  opacity: 1;
+  transform: rotateX(0);
+}
+
+.arrow {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  background: white;
+  box-shadow: -3px -3px 5px rgba(80, 90, 120, 0.05);
+  border-radius: 4px 0 0 0;
+  transform: rotate(45deg);
+  transition:
+    transform var(--transition-duration),
+    opacity var(--transition-duration);
+  will-change: transform;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--products-width);
+  height: var(--products-height);
+  padding: var(--padding);
+  background: white;
+  border-radius: 6px;
+  box-shadow:
+    0 50px 100px -20px rgba(50,50,93,.25),
+    0 30px 60px -30px rgba(0,0,0,.3);
+  transform-origin: 0 0;
+  transition:
+    transform var(--transition-duration),
+    opacity var(--transition-duration);
+}
+
+.content {
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  padding: var(--padding);
+  transition:
+    transform var(--transition-duration),
+    opacity var(--transition-duration);
+}
+
+.section {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.2s;
+  overflow: hidden;
+}
+
+.section.active {
+  opacity: 1;
+}
+
+/* Products Popover ----------------------------- */
+
+.section-products {
+  width: var(--products-width);
+  height: var(--products-height);
+}
+
+
+.imagea {
+  width: 250px;
+  height: 250px;
+}
